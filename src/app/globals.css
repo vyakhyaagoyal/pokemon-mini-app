@@ -38,7 +38,7 @@
 
 body {
   color: var(--foreground);
-  background: var(--background);
+  background: whitesmoke;
   font-family: 'Inter', Helvetica, Arial, sans-serif;
 }
 
@@ -115,4 +115,227 @@ body {
   .focus-ring {
     @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
   }
+}
+
+/* Pokémon-inspired design system with nostalgic 90s vibes
+All colors MUST be HSL for theming support.
+*/
+
+@layer base {
+    :root {
+        /* Base theme - Light Pokédex colors */
+        --background: 220 25% 97%;
+        --foreground: 225 15% 15%;
+
+        --card: 0 0% 100%;
+        --card-foreground: 225 15% 15%;
+
+        --popover: 0 0% 100%;
+        --popover-foreground: 225 15% 15%;
+
+        /* Pokémon electric theme - Pikachu inspired */
+        --primary: 45 95% 55%;
+        --primary-foreground: 225 15% 15%;
+        --primary-glow: 45 100% 75%;
+
+        /* Pokémon secondary - Pokédex blue accents */
+        --secondary: 210 100% 92%;
+        --secondary-foreground: 210 100% 25%;
+
+        /* Muted tones - Soft pokédex grays */
+        --muted: 220 15% 94%;
+        --muted-foreground: 220 10% 45%;
+
+        /* Accent - Poké Ball red */
+        --accent: 0 85% 60%;
+        --accent-foreground: 0 0% 100%;
+
+        --destructive: 0 84% 60%;
+        --destructive-foreground: 0 0% 98%;
+
+        --border: 220 20% 88%;
+        --input: 220 20% 88%;
+        --ring: 45 95% 55%;
+
+        --radius: 1rem;
+
+        /* Pokémon type colors */
+        --electric: 45 95% 55%;
+        --fire: 15 90% 60%;
+        --water: 210 85% 65%;
+        --grass: 120 50% 55%;
+        --psychic: 300 70% 70%;
+        --normal: 40 20% 75%;
+        --ghost: 270 50% 60%;
+
+        /* Nostalgic gradients */
+        --gradient-electric: linear-gradient(135deg, hsl(45 95% 55%), hsl(50 100% 75%));
+        --gradient-fire: linear-gradient(135deg, hsl(15 90% 60%), hsl(25 85% 70%));
+        --gradient-water: linear-gradient(135deg, hsl(210 85% 65%), hsl(220 80% 75%));
+        --gradient-grass: linear-gradient(135deg, hsl(120 50% 55%), hsl(140 60% 65%));
+        --gradient-pokeball: linear-gradient(135deg, hsl(0 85% 60%), hsl(15 80% 70%));
+        --gradient-background: linear-gradient(135deg, hsl(220 25% 97%), hsl(210 30% 95%));
+
+        /* Shadows for depth */
+        --shadow-glow: 0 0 20px hsl(var(--primary) / 0.3);
+        --shadow-pokeball: 0 4px 20px hsl(0 85% 60% / 0.2);
+        --shadow-card: 0 8px 32px hsl(220 15% 15% / 0.1);
+
+        /* Animation values */
+        --transition-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+
+        --sidebar-background: 0 0% 98%;
+        --sidebar-foreground: 240 5.3% 26.1%;
+        --sidebar-primary: 240 5.9% 10%;
+        --sidebar-primary-foreground: 0 0% 98%;
+        --sidebar-accent: 240 4.8% 95.9%;
+        --sidebar-accent-foreground: 240 5.9% 10%;
+        --sidebar-border: 220 13% 91%;
+        --sidebar-ring: 217.2 91.2% 59.8%;
+    }
+
+    .dark {
+        /* Dark theme - Night Pokédex */
+        --background: 225 25% 8%;
+        --foreground: 220 20% 92%;
+
+        --card: 225 20% 12%;
+        --card-foreground: 220 20% 92%;
+
+        --popover: 225 20% 12%;
+        --popover-foreground: 220 20% 92%;
+
+        --primary: 45 95% 65%;
+        --primary-foreground: 225 25% 8%;
+        --primary-glow: 45 100% 80%;
+
+        --secondary: 210 50% 15%;
+        --secondary-foreground: 210 80% 85%;
+
+        --muted: 225 15% 15%;
+        --muted-foreground: 220 10% 65%;
+
+        --accent: 0 85% 65%;
+        --accent-foreground: 0 0% 100%;
+
+        --destructive: 0 84% 65%;
+        --destructive-foreground: 0 0% 98%;
+
+        --border: 225 15% 20%;
+        --input: 225 15% 20%;
+        --ring: 45 95% 65%;
+
+        /* Dark gradients */
+        --gradient-electric: linear-gradient(135deg, hsl(45 95% 65%), hsl(50 100% 80%));
+        --gradient-fire: linear-gradient(135deg, hsl(15 90% 65%), hsl(25 85% 75%));
+        --gradient-water: linear-gradient(135deg, hsl(210 85% 70%), hsl(220 80% 80%));
+        --gradient-grass: linear-gradient(135deg, hsl(120 50% 60%), hsl(140 60% 70%));
+        --gradient-pokeball: linear-gradient(135deg, hsl(0 85% 65%), hsl(15 80% 75%));
+        --gradient-background: linear-gradient(135deg, hsl(225 25% 8%), hsl(215 30% 12%));
+
+        --sidebar-background: 240 5.9% 10%;
+        --sidebar-foreground: 240 4.8% 95.9%;
+        --sidebar-primary: 224.3 76.3% 48%;
+        --sidebar-primary-foreground: 0 0% 100%;
+        --sidebar-accent: 240 3.7% 15.9%;
+        --sidebar-accent-foreground: 240 4.8% 95.9%;
+        --sidebar-border: 240 3.7% 15.9%;
+        --sidebar-ring: 217.2 91.2% 59.8%;
+    }
+}
+
+@layer utilities {
+  .bg-card {
+    background-color: theme('colors.card');
+  }
+
+  .border-border {
+    border-color: theme('colors.border');
+  }
+}
+
+@layer components {
+
+    /* Pokémon-themed button variants */
+    .btn-electric {
+        @apply bg-gradient-to-r from-yellow-400 to-yellow-500 text-black font-bold;
+        background: var(--gradient-electric);
+        box-shadow: var(--shadow-glow);
+        transition: all 0.3s var(--transition-bounce);
+    }
+
+    .btn-electric:hover {
+        transform: translateY(-2px) scale(1.05);
+        box-shadow: 0 8px 25px hsl(var(--primary) / 0.4);
+    }
+
+    .btn-fire {
+        background: var(--gradient-fire);
+        @apply text-white font-bold;
+        transition: all 0.3s var(--transition-bounce);
+    }
+
+    .btn-water {
+        background: var(--gradient-water);
+        @apply text-white font-bold;
+        transition: all 0.3s var(--transition-bounce);
+    }
+
+    .btn-grass {
+        background: var(--gradient-grass);
+        @apply text-white font-bold;
+        transition: all 0.3s var(--transition-bounce);
+    }
+
+    /* Pokédex-style card */
+    .pokedex-card {
+        @apply bg-card rounded-2xl p-6 border-2 border-border;
+        box-shadow: var(--shadow-card);
+        transition: all 0.3s var(--transition-smooth);
+    }
+
+    .pokedex-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 40px hsl(var(--foreground) / 0.15);
+    }
+
+    /* Glowing text effect */
+    .text-glow {
+        text-shadow: 0 0 10px hsl(var(--primary) / 0.5);
+    }
+
+    /* Bounce animation */
+    .animate-bounce-gentle {
+        animation: bounce-gentle 2s infinite;
+    }
+
+    @keyframes bounce-gentle {
+
+        0%,
+        100% {
+            transform: translateY(0px);
+        }
+
+        50% {
+            transform: translateY(-10px);
+        }
+    }
+
+    /* Pulse glow animation */
+    .animate-pulse-glow {
+        animation: pulse-glow 2s infinite;
+    }
+
+    @keyframes pulse-glow {
+
+        0%,
+        100% {
+            box-shadow: 0 0 5px hsl(var(--primary) / 0.3);
+        }
+
+        50% {
+            box-shadow: 0 0 20px hsl(var(--primary) / 0.6), 0 0 30px hsl(var(--primary) / 0.4);
+        }
+    }
 }

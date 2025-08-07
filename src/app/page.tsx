@@ -1,24 +1,38 @@
-import { Metadata } from "next";
-import App from "./app";
-import { APP_NAME, APP_DESCRIPTION, APP_OG_IMAGE_URL } from "~/lib/constants";
-import { getMiniAppEmbedMetadata } from "~/lib/utils";
+// export default function Home() {
+//   return (
+//     <main style={{ padding: "2rem", textAlign: "center" }}>
+//       <h1>Welcome to My Farcaster Mini App</h1>
+//       <p>This is the homepage of your mini app project.</p>
+//       <p>To experience the frame, try visiting <code>/frame</code>.</p>
+//     </main>
+//   );
+// }
+"use client";
 
-export const revalidate = 300;
+import { Toaster } from "../components/ui/ui/toaster";
+import { Toaster as Sonner } from "../components/ui/ui/sonner";
+import { TooltipProvider } from "../components/ui/ui/tooltip";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Index from "../pages/Index";
+import NotFound from "../pages/NotFound";
 
-export async function generateMetadata(): Promise<Metadata> {
-  return {
-    title: APP_NAME,
-    openGraph: {
-      title: APP_NAME,
-      description: APP_DESCRIPTION,
-      images: [APP_OG_IMAGE_URL],
-    },
-    other: {
-      "fc:frame": JSON.stringify(getMiniAppEmbedMetadata()),
-    },
-  };
-}
+const queryClient = new QueryClient();
 
-export default function Home() {
-  return (<App />);
-}
+const App = () => (
+  <QueryClientProvider client={queryClient}>
+    <TooltipProvider>
+      <Toaster />
+      <Sonner />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Index />} />
+          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </TooltipProvider>
+  </QueryClientProvider>
+);
+
+export default App;

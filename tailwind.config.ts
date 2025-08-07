@@ -22,19 +22,21 @@ export default {
   theme: {
   	extend: {
   		colors: {
-  			// Main theme color - change this to update the entire app's color scheme
-  			primary: "#8b5cf6", // Main brand color
-  			"primary-light": "#a78bfa", // For hover states
-  			"primary-dark": "#7c3aed", // For active states
-  			
-  			// Secondary colors for backgrounds and text
-  			secondary: "#f8fafc", // Light backgrounds
-  			"secondary-dark": "#334155", // Dark backgrounds
-  			
-  			// Legacy CSS variables for backward compatibility
-  			background: 'var(--background)',
-  			foreground: 'var(--foreground)'
-  		},
+    // Your existing colors
+    primary: "#8b5cf6",
+    "primary-light": "#a78bfa",
+    "primary-dark": "#7c3aed",
+    secondary: "#f8fafc",
+    "secondary-dark": "#334155",
+    card: "#ffffff",
+    border: "#e5e7eb",
+
+    // ✅ Add these to support `text-foreground`, `text-muted-foreground`, etc.
+    background: 'hsl(var(--background) / <alpha-value>)',
+    foreground: 'hsl(var(--foreground) / <alpha-value>)',
+    'muted-foreground': 'hsl(var(--muted-foreground) / <alpha-value>)',
+    'card-foreground': 'hsl(var(--card-foreground) / <alpha-value>)',
+  },
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
