@@ -18,7 +18,8 @@ export const QuizResult = ({ result, onPlayAgain }: QuizResultProps) => {
     const shareUrl = window.location.href;
 
     try {
-      if (navigator.share && navigator.canShare) {
+      if (navigator.share && navigator.canShare && navigator.canShare()) {
+ 
         await navigator.share({
           title: 'Which Pokémon Are You?',
           text: shareText,

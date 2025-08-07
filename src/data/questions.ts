@@ -1,4 +1,4 @@
-import { QuizQuestion } from '@/types/pokemon';
+import { QuizQuestion } from '../types/pokemon';
 
 export const quizQuestions: QuizQuestion[] = [
   {

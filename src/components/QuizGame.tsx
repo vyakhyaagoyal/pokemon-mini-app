@@ -68,7 +68,7 @@ export const QuizGame = ({ onComplete, onReset }: QuizGameProps) => {
         (maxScore / (quizQuestions.length * 3)) * 100
       );
       onComplete({ pokemon: resultPokemon, matchPercentage });
-      toast.success(`You're ${resultPokemon.name}! 🎉`);
+      toast.success(`You&apos;re ${resultPokemon.name}! 🎉`);
     }
   };
 
@@ -105,27 +105,28 @@ export const QuizGame = ({ onComplete, onReset }: QuizGameProps) => {
 
           {/* Answers list stacked vertically */}
           <div className="flex flex-col gap-3">
-            {currentQ.answers.map((answer, index) => (
-              <Button
-                key={answer.id}
-                variant="quiz"
-                size="quiz"
-                onClick={() => handleAnswer(answer.id)}
-                disabled={isAnimating}
-                className={`transform transition-all duration-300 hover:scale-[1.02] ${
-                  isAnimating ? 'opacity-50' : ''
-                } animate-fade-in text-sm sm:text-base w-full text-left`}
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="flex items-center gap-3 whitespace-normal">
-                  <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-xs sm:text-sm flex-shrink-0">
-                    {String.fromCharCode(65 + index)}
-                  </div>
-                  <span className="break-words">{answer.text}</span>
-                </div>
-              </Button>
-            ))}
-          </div>
+  {currentQ.answers.map((answer: typeof currentQ.answers[number], index) => (
+    <Button
+      key={answer.id}
+      variant="quiz"
+      size="quiz"
+      onClick={() => handleAnswer(answer.id)}
+      disabled={isAnimating}
+      className={`transform transition-all duration-300 hover:scale-[1.02] ${
+        isAnimating ? 'opacity-50' : ''
+      } animate-fade-in text-sm sm:text-base w-full text-left`}
+      style={{ animationDelay: `${index * 0.1}s` }}
+    >
+      <div className="flex items-center gap-3 whitespace-normal">
+        <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-xs sm:text-sm flex-shrink-0">
+          {String.fromCharCode(65 + index)}
+        </div>
+        <span className="break-words">{answer.text}</span>
+      </div>
+    </Button>
+  ))}
+</div>
+
         </div>
       </Card>
 
