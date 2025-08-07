@@ -1,7 +1,7 @@
 {
   "extends": ["next/core-web-vitals", "next/typescript"],
   "rules": {
-    // Disable img warnings since you're using them intentionally in specific contexts
+    // Disable img warnings since You&apos;re using them intentionally in specific contexts
     "@next/next/no-img-element": "off",
 
     // Allow @ts-ignore comments (though @ts-expect-error is preferred)

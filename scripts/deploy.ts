@@ -307,7 +307,7 @@ async function loginToVercel(): Promise<boolean> {
 
   console.log('\n📱 Waiting for login to complete...');
   console.log(
-    "If you're creating a new account, please complete the Vercel account setup in your browser first.",
+    "If You&apos;re creating a new account, please complete the Vercel account setup in your browser first.",
   );
 
   for (let i = 0; i < 150; i++) {

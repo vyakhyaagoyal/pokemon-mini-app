@@ -14,7 +14,7 @@ export const QuizResult = ({ result, onPlayAgain }: QuizResultProps) => {
   const { pokemon, matchPercentage } = result;
 
   const handleShare = async () => {
-    const shareText = `I just discovered I'm ${pokemon.name}! 🎉 Take the "Which Pokémon Are You?" quiz and find your match!`;
+    const shareText = `I just discovered I&apos;m ${pokemon.name}! 🎉 Take the "Which Pokémon Are You?" quiz and find your match!`;
     const shareUrl = window.location.href;
 
     try {
@@ -43,7 +43,7 @@ export const QuizResult = ({ result, onPlayAgain }: QuizResultProps) => {
         // Fallback to clipboard
         await navigator.clipboard.writeText(`${shareText} ${shareUrl}`);
         toast.success('Result copied to clipboard!');
-      } catch (clipboardError) {
+      } catch (_clipboardError) {
         toast.error('Unable to share');
       }
     }
@@ -145,7 +145,7 @@ export const QuizResult = ({ result, onPlayAgain }: QuizResultProps) => {
       {/* Fun Fact */}
       <div className="text-center text-xs sm:text-sm text-muted-foreground max-w-md px-4">
         <p>
-          🎉 You're one of the {pokemon.traits.join(', ').toLowerCase()} trainers out there!
+          🎉 You&apos;re one of the {pokemon.traits.join(', ').toLowerCase()} trainers out there!
         </p>
       </div>
     </div>

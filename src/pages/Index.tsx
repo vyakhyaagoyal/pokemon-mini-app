@@ -3,7 +3,7 @@ import { WelcomeScreen } from '../components/WelcomeScreen';
 import { QuizGame } from '../components/QuizGame';
 import { QuizResult } from '../components/QuizResult';
 import { QuizResult as QuizResultType } from '../types/pokemon';
-import { sdk } from '@farcaster/miniapp-sdk';
+// import { sdk } from '@farcaster/miniapp-sdk';
 type GameState = 'welcome' | 'quiz' | 'result';
 
 
