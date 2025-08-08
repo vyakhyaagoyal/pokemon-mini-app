@@ -1,0 +1,18 @@
+{
+  "accountAssociation": {
+    "header": "eyJmaWQiOjExNTAzMDgsInR5cGUiOiJjdXN0b2R5Iiwia2V5IjoiMHhCRDg2OEY1OUYyNDlEZjRBZGNhM2QyNjM4NWVhNDY4NDE3ZDZFQjM4In0",
+    "payload": "eyJkb21haW4iOiJwb2tlbW9uLW1pbmktYXBwLnZlcmNlbC5hcHAifQ",
+    "signature": "MHgyYTIyN2FiNWQxZjcwYjczYjdjODU5ZWUxY2E1MDlhZjZkZWJkYTlhM2QwOWY4ZWRiZmIzZmY1NmVlZmVjZmVkMWU4Y2I1M2FlNDkwMTJmZWY3MjMzZTU5NjU1ZTI0MGUwNDExZGUyNmI2YjVkMzJhZGIxYjc5NjljMmY4MjRiMjFj"
+  },
+  "frame": {
+    "version": "1",
+    "name": "Example Frame",
+    "iconUrl": "https://pokemon-mini-app.vercel.app/icon.png",
+    "homeUrl": "https://pokemon-mini-app.vercel.app",
+    "imageUrl": "https://pokemon-mini-app.vercel.app/image.png",
+    "buttonTitle": "Check this out",
+    "splashImageUrl": "https://pokemon-mini-app.vercel.app/splash.png",
+    "splashBackgroundColor": "#eeccff",
+    "webhookUrl": "https://pokemon-mini-app.vercel.app/api/webhook"
+  }
+}
