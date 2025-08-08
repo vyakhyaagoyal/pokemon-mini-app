@@ -14,7 +14,7 @@ export const QuizResult = ({ result, onPlayAgain }: QuizResultProps) => {
   const { pokemon, matchPercentage } = result;
 
   const handleShare = async () => {
-    const shareText = `I just discovered I&apos;m ${pokemon.name}! 🎉 Take the "Which Pokémon Are You?" quiz and find your match!`;
+    const shareText = `I just discovered I'm ${pokemon.name}! 🎉 Take the "Which Pokémon Are You?" quiz and find your match!`;
     const shareUrl = window.location.href;
 
     try {

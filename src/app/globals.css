@@ -117,6 +117,15 @@ body {
   }
 }
 
+/* Make all toasts readable */
+[data-sonner-toast] {
+  background-color: rgb(139 92 246) !important;
+  color: white !important;
+  font-weight: 600;
+  border: 1px solid white;
+}
+
+
 /* Pokémon-inspired design system with nostalgic 90s vibes
 All colors MUST be HSL for theming support.
 */

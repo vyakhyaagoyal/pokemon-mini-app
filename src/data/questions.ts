@@ -62,7 +62,7 @@ export const quizQuestions: QuizQuestion[] = [
     answers: [
       {
         id: "a",
-        text: "I&apos;m the one getting everyone hyped up!",
+        text: "I'm the one getting everyone hyped up!",
         pokemonTraits: { pikachu: 3, charmander: 2, jigglypuff: 1, gengar: 2 }
       },
       {
@@ -72,7 +72,7 @@ export const quizQuestions: QuizQuestion[] = [
       },
       {
         id: "c",
-        text: "I&apos;m somewhere in the middle, connecting with everyone",
+        text: "I'm somewhere in the middle, connecting with everyone",
         pokemonTraits: { squirtle: 3, pikachu: 1, bulbasaur: 1, eevee: 3 }
       },
       {
