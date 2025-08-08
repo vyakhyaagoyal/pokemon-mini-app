@@ -9,10 +9,12 @@ export const metadata = {
     "fc:frame": "vNext",
     "fc:frame:image": "https://pokemon-mini-app.vercel.app/image.png",
     "fc:frame:button:1": "Play Now",
-    "fc:frame:post_url": "https://pokemon-mini-app.vercel.app/api/frame",
+    "fc:frame:button:1:action": "link",
+    "fc:frame:button:1:target": "https://pokemon-mini-app.vercel.app/",
   },
 };
 
 export default function FramePage() {
-  return null; // no redirect, no rendering, just metadata
+  // Nothing to render, only metadata for Warpcast to read
+  return null;
 }
