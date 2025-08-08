@@ -1,3 +1,6 @@
+// src/app/frame/page.tsx
+import { redirect } from "next/navigation";
+
 export const metadata = {
   title: "Pokemon Mini App",
   description: "A Farcaster frame for Pokémon fun!",
@@ -8,13 +11,21 @@ export const metadata = {
   other: {
     "fc:frame": "vNext",
     "fc:frame:image": "https://pokemon-mini-app.vercel.app/image.png",
-    // Uncomment these if you later add interactivity
-    // "fc:frame:button:1": "Start",
-    // "fc:frame:post_url": "https://pokemon-mini-app.vercel.app/api/frame",
+    "fc:frame:button:1": "Play Now",
+    "fc:frame:post_url": "https://pokemon-mini-app.vercel.app/",
   },
 };
 
+// Detect if request is from Warpcast bot
 export default function FramePage() {
-  // This page is only for metadata, so we don't render any visible content
+  if (typeof window !== "undefined") {
+    const userAgent = navigator.userAgent.toLowerCase();
+    const isWarpcastBot = userAgent.includes("warpcast");
+    if (!isWarpcastBot) {
+      redirect("/"); // redirect normal users to your game page
+    }
+  }
+
+  // Nothing to show — just metadata for Warpcast
   return null;
 }
